@@ -45,50 +45,76 @@
             border: 1px solid rgba(255, 255, 255, 0.3);
             box-shadow: 0 8px 32px 0 rgba(255, 182, 193, 0.15);
         }
+        
+        /* スマホ向け背景画像の微調整 */
+        @media (max-width: 768px) {
+            .blob-bg {
+                background-size: 500px;
+                background-position: right -100px top -50px;
+            }
+            .blob-bg-2 {
+                background-size: 400px;
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-50 font-sans leading-relaxed tracking-wide">
 
     <!-- Header -->
     <header class="bg-white/90 backdrop-blur-md fixed w-full z-50 top-0 shadow-sm">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="text-xl font-bold text-primary flex items-center gap-2">
+        <div class="max-w-6xl mx-auto px-4 py-3 md:py-4 flex justify-between items-center">
+            <div class="text-base md:text-xl font-bold text-primary flex items-center gap-1 md:gap-2">
                 <i class="fa-solid fa-seedling text-green-400"></i>
-                運動療育みらいサポーターズ
+                <span class="hidden sm:inline">運動療育みらいサポーターズ</span>
+                <span class="sm:hidden">みらいサポーターズ</span>
             </div>
-            <a href="#cta" class="bg-primary hover:bg-pink-400 text-white font-bold py-2 px-6 rounded-full transition duration-300 shadow-md text-sm md:text-base">
-                無料相談に申し込む
+            <a href="#cta" class="bg-primary hover:bg-pink-400 text-white font-bold py-2 px-4 md:px-6 rounded-full transition duration-300 shadow-md text-xs md:text-base flex items-center gap-1">
+                <i class="fa-regular fa-envelope md:hidden"></i>
+                <span>無料相談<span class="hidden md:inline">に申し込む</span></span>
             </a>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="pt-32 pb-20 px-4 blob-bg min-h-screen flex items-center relative overflow-hidden">
-        <div class="absolute top-20 left-10 w-32 h-32 bg-secondary rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
-            <div class="space-y-6">
-                <div class="inline-block bg-white text-pink-500 font-bold px-4 py-2 rounded-full shadow-sm text-sm border border-pink-100">
-                    <i class="fa-solid fa-book-open mr-1"></i> 無料相談申込で「講師の出版本」をプレゼント！
+    <section class="pt-28 md:pt-32 pb-16 md:pb-20 px-4 blob-bg min-h-[90vh] flex items-center relative overflow-hidden">
+        <div class="absolute top-20 left-10 w-24 h-24 md:w-32 md:h-32 bg-secondary rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12 items-center relative z-10 w-full">
+            <div class="space-y-4 md:space-y-6 text-center md:text-left">
+                <div class="inline-block bg-white text-pink-500 font-bold px-3 py-2 md:px-4 md:py-2 rounded-full shadow-sm text-xs md:text-sm border border-pink-100 mb-2 md:mb-0">
+                    <i class="fa-solid fa-book-open mr-1"></i> 無料相談申込で「講師の出版本」プレゼント！
                 </div>
-                <h1 class="text-4xl md:text-5xl font-bold leading-[2] tracking-wide">
-                    <span class="text-primary relative inline-block mb-2 md:mb-4">
+                <h1 class="text-[1.75rem] sm:text-4xl md:text-5xl font-bold leading-[1.6] md:leading-[1.8] tracking-wide">
+                    <span class="text-primary relative inline-block mb-1 md:mb-4">
                         運動療育を言語化し
-                        <span class="absolute bottom-0 md:bottom-1 left-0 w-full h-1.5 md:h-2 bg-yellow-300 mix-blend-multiply opacity-60 rounded-full"></span>
+                        <span class="absolute bottom-0 md:bottom-1 left-0 w-full h-1 md:h-2 bg-yellow-300 mix-blend-multiply opacity-60 rounded-full"></span>
                     </span><br>
-                    <span class="text-textMain inline-block mb-2 md:mb-4">誰でも結果を出せる</span><br>
+                    <span class="text-textMain inline-block mb-1 md:mb-4">誰でも結果を出せる</span><br>
                     <span class="text-primary">再現性のある支援へ🌱</span>
                 </h1>
-                <p class="text-lg text-textLight">
-                    子どもの運動支援に悩む指導員・教育者さんへ。<br>
+                <p class="text-base md:text-lg text-textLight px-2 md:px-0">
+                    子どもの運動支援に悩む指導員・教育者さんへ。<br class="hidden md:block">
                     現場ですぐに使える「一生もののスキル」と「保護者対応」を身につけ、専門性を高める超少人数の認定講座です。
                 </p>
-                <div class="pt-4">
-                    <a href="#cta" class="inline-flex items-center justify-center w-full md:w-auto bg-gradient-to-r from-primary to-pink-400 text-white font-bold text-lg py-4 px-8 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition duration-300">
-                        無料個別相談に申し込む <i class="fa-solid fa-arrow-right ml-2"></i>
+                <div class="pt-4 md:pt-6 w-full max-w-sm mx-auto md:mx-0">
+                    <a href="#cta" class="flex md:inline-flex items-center justify-center w-full md:w-auto bg-gradient-to-r from-primary to-pink-400 text-white font-bold text-base md:text-lg py-4 md:py-5 px-8 rounded-full shadow-[0_10px_20px_rgba(255,182,193,0.4)] hover:shadow-xl hover:scale-105 transition duration-300 relative overflow-hidden group">
+                        <span class="absolute inset-0 w-full h-full bg-white/20 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></span>
+                        無料個別相談に申し込む <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
                     </a>
-                    <p class="text-xs text-center md:text-left text-gray-400 mt-2">※強引な勧誘は一切ありません。お気軽にご相談ください。</p>
+                    <p class="text-[10px] md:text-xs text-center md:text-left text-gray-400 mt-3">※強引な勧誘は一切ありません。お気軽にご相談ください。</p>
                 </div>
             </div>
+            
+            <!-- スマホ用のヒーロー画像 (PCでは非表示、スマホでは表示) -->
+            <div class="relative block md:hidden mt-8 mb-4">
+                <div class="bg-white p-2 rounded-2xl shadow-lg relative z-10">
+                    <img src="images/hero_hightouch.jpg" alt="ハイタッチする笑顔の指導員" class="rounded-xl w-full h-64 object-cover">
+                </div>
+                <div class="absolute -bottom-4 -right-2 bg-secondary text-textMain font-bold px-4 py-2 rounded-xl shadow-md z-20 text-sm transform rotate-3">
+                    <i class="fa-solid fa-users text-yellow-500"></i> 超少人数制で安心！
+                </div>
+            </div>
+
+            <!-- PC用のヒーロー画像 -->
             <div class="relative hidden md:block">
                 <div class="bg-white p-4 rounded-3xl shadow-xl transform rotate-3 hover:rotate-0 transition duration-500">
                     <img src="images/hero_hightouch.jpg" alt="ハイタッチする笑顔の指導員" class="rounded-2xl w-full h-[400px] object-cover">
@@ -101,111 +127,112 @@
     </section>
 
     <!-- Target / Empathy Section -->
-    <section class="py-20 bg-white">
+    <section class="py-16 md:py-24 bg-white">
         <div class="max-w-4xl mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4">現場でこんな<span class="text-primary">「モヤモヤ」</span>ありませんか？</h2>
-                <div class="w-24 h-1 bg-secondary mx-auto rounded-full"></div>
+            <div class="text-center mb-10 md:mb-14">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4 leading-relaxed">現場でこんな<br class="sm:hidden"><span class="text-primary">「モヤモヤ」</span>ありませんか？</h2>
+                <div class="w-16 md:w-24 h-1 bg-secondary mx-auto rounded-full"></div>
             </div>
             
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="glass-card p-6 rounded-2xl flex items-start gap-4">
-                    <div class="bg-pink-100 w-14 h-14 shrink-0 flex items-center justify-center rounded-full text-pink-500">
-                        <i class="fa-solid fa-question text-2xl"></i>
+            <div class="grid sm:grid-cols-2 gap-4 md:gap-6">
+                <div class="glass-card p-5 md:p-6 rounded-2xl flex items-start gap-4">
+                    <div class="bg-pink-100 w-12 h-12 md:w-14 md:h-14 shrink-0 flex items-center justify-center rounded-full text-pink-500 mt-1">
+                        <i class="fa-solid fa-question text-xl md:text-2xl"></i>
                     </div>
                     <div>
-                        <p class="font-bold mb-2">何をしていいか分からない…</p>
-                        <p class="text-sm text-textLight">「とりあえず身体を動かそう」と感覚で支援していて、これで合っているのか不安。</p>
+                        <p class="font-bold mb-1 md:mb-2 text-base md:text-lg">何をしていいか分からない…</p>
+                        <p class="text-xs md:text-sm text-textLight leading-relaxed">「とりあえず身体を動かそう」と感覚で支援していて、これで合っているのか不安。</p>
                     </div>
                 </div>
-                <div class="glass-card p-6 rounded-2xl flex items-start gap-4">
-                    <div class="bg-yellow-100 w-14 h-14 shrink-0 flex items-center justify-center rounded-full text-yellow-600">
-                        <i class="fa-solid fa-comments text-2xl"></i>
+                <div class="glass-card p-5 md:p-6 rounded-2xl flex items-start gap-4">
+                    <div class="bg-yellow-100 w-12 h-12 md:w-14 md:h-14 shrink-0 flex items-center justify-center rounded-full text-yellow-600 mt-1">
+                        <i class="fa-solid fa-comments text-xl md:text-2xl"></i>
                     </div>
                     <div>
-                        <p class="font-bold mb-2">保護者にうまく説明できない</p>
-                        <p class="text-sm text-textLight">面談の時、根拠を持って子どもの変化を伝えられず、信頼関係が築けていない気がする。</p>
+                        <p class="font-bold mb-1 md:mb-2 text-base md:text-lg">保護者にうまく説明できない</p>
+                        <p class="text-xs md:text-sm text-textLight leading-relaxed">面談の時、根拠を持って子どもの変化を伝えられず、信頼関係が築けていない気がする。</p>
                     </div>
                 </div>
-                <div class="glass-card p-6 rounded-2xl flex items-start gap-4">
-                    <div class="bg-blue-100 w-14 h-14 shrink-0 flex items-center justify-center rounded-full text-blue-500">
-                        <i class="fa-solid fa-arrow-trend-up text-2xl"></i>
+                <div class="glass-card p-5 md:p-6 rounded-2xl flex items-start gap-4">
+                    <div class="bg-blue-100 w-12 h-12 md:w-14 md:h-14 shrink-0 flex items-center justify-center rounded-full text-blue-500 mt-1">
+                        <i class="fa-solid fa-arrow-trend-up text-xl md:text-2xl"></i>
                     </div>
                     <div>
-                        <p class="font-bold mb-2">専門性を高めて自立したい</p>
-                        <p class="text-sm text-textLight">今の職場で埋もれたくない。ゆくゆくは独立や起業も視野に入れたいけれど、武器がない。</p>
+                        <p class="font-bold mb-1 md:mb-2 text-base md:text-lg">専門性を高めて自立したい</p>
+                        <p class="text-xs md:text-sm text-textLight leading-relaxed">今の職場で埋もれたくない。ゆくゆくは独立や起業も視野に入れたいけれど、武器がない。</p>
                     </div>
                 </div>
-                <div class="glass-card p-6 rounded-2xl flex items-start gap-4">
-                    <div class="bg-green-100 w-14 h-14 shrink-0 flex items-center justify-center rounded-full text-green-500">
-                        <i class="fa-solid fa-people-group text-2xl"></i>
+                <div class="glass-card p-5 md:p-6 rounded-2xl flex items-start gap-4">
+                    <div class="bg-green-100 w-12 h-12 md:w-14 md:h-14 shrink-0 flex items-center justify-center rounded-full text-green-500 mt-1">
+                        <i class="fa-solid fa-people-group text-xl md:text-2xl"></i>
                     </div>
                     <div>
-                        <p class="font-bold mb-2">相談できる仲間が欲しい</p>
-                        <p class="text-sm text-textLight">一人で悩むのはもう限界。同じ志を持った温かいコミュニティで一緒に学びたい。</p>
+                        <p class="font-bold mb-1 md:mb-2 text-base md:text-lg">相談できる仲間が欲しい</p>
+                        <p class="text-xs md:text-sm text-textLight leading-relaxed">一人で悩むのはもう限界。同じ志を持った温かいコミュニティで一緒に学びたい。</p>
                     </div>
                 </div>
             </div>
             
-            <div class="mt-12 text-center bg-secondary/30 p-8 rounded-3xl">
-                <p class="text-xl font-bold mb-2">そのお悩み、私たちが解決します！</p>
-                <p class="text-textLight">過去の私も同じように悩んでいました。だからこそ、現場の支援者に本当に必要な「安心できる学びの場」を作りました。</p>
+            <div class="mt-10 md:mt-12 text-center bg-secondary/30 p-6 md:p-8 rounded-2xl md:rounded-3xl border border-yellow-100">
+                <p class="text-lg md:text-xl font-bold mb-2 md:mb-3 text-textMain">そのお悩み、私たちが解決します！</p>
+                <p class="text-sm md:text-base text-textLight leading-relaxed">過去の私も同じように悩んでいました。だからこそ、現場の支援者に本当に必要な「安心できる学びの場」を作りました。</p>
             </div>
         </div>
     </section>
 
     <!-- Concept Section -->
-    <section class="py-20 blob-bg-2">
+    <section class="py-16 md:py-24 blob-bg-2">
         <div class="max-w-5xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-4">講座を通じて、あなたは<span class="text-primary">こう変わります</span></h2>
-            <div class="w-24 h-1 bg-primary mx-auto rounded-full mb-12"></div>
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 leading-relaxed">講座を通じて、あなたは<br class="sm:hidden"><span class="text-primary">こう変わります</span></h2>
+            <div class="w-16 md:w-24 h-1 bg-primary mx-auto rounded-full mb-10 md:mb-14"></div>
             
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-3xl shadow-md hover:shadow-xl transition duration-300">
-                    <div class="w-20 h-20 mx-auto bg-pink-100 rounded-full flex items-center justify-center mb-6">
-                        <i class="fa-solid fa-book-open text-3xl text-pink-500"></i>
+            <div class="grid sm:grid-cols-3 gap-6 md:gap-8">
+                <div class="bg-white p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-md hover:shadow-xl transition duration-300">
+                    <div class="w-16 h-16 md:w-20 md:h-20 mx-auto bg-pink-100 rounded-full flex items-center justify-center mb-4 md:mb-6">
+                        <i class="fa-solid fa-book-open text-2xl md:text-3xl text-pink-500"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">感覚を「言語化」できる</h3>
-                    <p class="text-textLight text-sm">なんとなくの指導を卒業。子どもの身体の動きを医学的根拠に基づいて正しく見立て、言葉で説明できるようになります。</p>
+                    <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4">感覚を「言語化」できる</h3>
+                    <p class="text-textLight text-xs md:text-sm leading-relaxed">なんとなくの指導を卒業。子どもの身体の動きを医学的根拠に基づいて正しく見立て、言葉で説明できるようになります。</p>
                 </div>
-                <div class="bg-white p-8 rounded-3xl shadow-md hover:shadow-xl transition duration-300">
-                    <div class="w-20 h-20 mx-auto bg-yellow-100 rounded-full flex items-center justify-center mb-6">
-                        <i class="fa-solid fa-handshake-angle text-3xl text-yellow-600"></i>
+                <div class="bg-white p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-md hover:shadow-xl transition duration-300">
+                    <div class="w-16 h-16 md:w-20 md:h-20 mx-auto bg-yellow-100 rounded-full flex items-center justify-center mb-4 md:mb-6">
+                        <i class="fa-solid fa-handshake-angle text-2xl md:text-3xl text-yellow-600"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">保護者からの「信頼」獲得</h3>
-                    <p class="text-textLight text-sm">具体的な根拠をもとに保護者へアプローチを説明できるようになり、「先生にお願いしたい！」と言われる存在になります。</p>
+                    <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4">保護者からの「信頼」獲得</h3>
+                    <p class="text-textLight text-xs md:text-sm leading-relaxed">具体的な根拠をもとに保護者へアプローチを説明できるようになり、「先生にお願いしたい！」と言われる存在になります。</p>
                 </div>
-                <div class="bg-white p-8 rounded-3xl shadow-md hover:shadow-xl transition duration-300">
-                    <div class="w-20 h-20 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-6">
-                        <i class="fa-solid fa-heart text-3xl text-blue-400 leading-none pb-1"></i>
+                <div class="bg-white p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-md hover:shadow-xl transition duration-300">
+                    <div class="w-16 h-16 md:w-20 md:h-20 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-4 md:mb-6">
+                        <i class="fa-solid fa-heart text-2xl md:text-3xl text-blue-400 leading-none pb-1"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">一生の「仲間」ができる</h3>
-                    <p class="text-textLight text-sm">超少人数制のアットホームな空間で学びます。講座終了後もコミュニティとして発展し、いつでも相談できる環境が手に入ります。</p>
+                    <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4">一生の「仲間」ができる</h3>
+                    <p class="text-textLight text-xs md:text-sm leading-relaxed">超少人数制のアットホームな空間で学びます。講座終了後もコミュニティとして発展し、いつでも相談できる環境が手に入ります。</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Instructor Profile Section -->
-    <section class="py-20 bg-pink-50">
+    <section class="py-16 md:py-24 bg-pink-50">
         <div class="max-w-4xl mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4">講師紹介</h2>
-                <div class="w-24 h-1 bg-secondary mx-auto rounded-full"></div>
+            <div class="text-center mb-10 md:mb-14">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">講師紹介</h2>
+                <div class="w-16 md:w-24 h-1 bg-secondary mx-auto rounded-full"></div>
             </div>
             
-            <div class="bg-white rounded-3xl shadow-lg p-8 md:p-12 flex flex-col md:flex-row gap-8 items-center md:items-start border border-pink-100">
-                <div class="w-48 h-48 shrink-0">
-                    <img src="images/profile.jpeg" alt="谷河 慎介" class="w-full h-full object-cover rounded-full border-4 border-white shadow-md">
+            <div class="bg-white rounded-3xl shadow-lg p-6 md:p-12 flex flex-col md:flex-row gap-6 md:gap-8 items-center md:items-start border border-pink-100">
+                <div class="w-32 h-32 md:w-48 md:h-48 shrink-0 relative">
+                    <img src="images/profile.jpeg" alt="谷河 慎介" class="w-full h-full object-cover rounded-full border-4 border-white shadow-md relative z-10">
+                    <div class="absolute inset-0 bg-primary rounded-full transform translate-x-2 translate-y-2 z-0 opacity-20"></div>
                 </div>
                 <div class="flex-1 text-center md:text-left">
-                    <p class="text-primary font-bold mb-1">理学療法士 / 運動療育さとやま 代表</p>
-                    <h3 class="text-3xl font-bold mb-4">谷河 慎介 <span class="text-base font-normal text-gray-500 ml-2">Shinsuke Tanikawa</span></h3>
-                    <p class="text-sm text-textMain leading-relaxed mb-6">
+                    <p class="text-primary font-bold mb-1 text-sm md:text-base">理学療法士 / 運動療育さとやま 代表</p>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4">谷河 慎介 <span class="text-xs md:text-sm font-normal text-gray-500 md:ml-2 block md:inline mt-1 md:mt-0">Shinsuke Tanikawa</span></h3>
+                    <p class="text-sm text-textMain leading-loose mb-6 text-left">
                         「なんとなくの支援」から卒業し、子どもの変化を説明できる支援へ。現場の支援者が自信を持って働けるよう、感覚を「言語化」する再現性の高いメソッドを構築。<br><br>
                         自身が運営する施設では、稼働率ほぼ100％、見学からの成約率84％という圧倒的な実績を誇り、現場での実践と専門性を掛け合わせた指導には定評がある。
                     </p>
-                    <div class="inline-block bg-yellow-50 text-yellow-800 text-sm font-bold px-4 py-2 rounded-full border border-yellow-200">
+                    <div class="inline-block bg-yellow-50 text-yellow-800 text-xs md:text-sm font-bold px-4 py-3 rounded-full border border-yellow-200 shadow-sm w-full md:w-auto">
                         <i class="fa-solid fa-book-open text-yellow-600 mr-2"></i> 著書：「はじめての運動療育」など2冊出版
                     </div>
                 </div>
@@ -214,28 +241,28 @@
     </section>
 
     <!-- Course Info Section -->
-    <section class="py-20 bg-white">
+    <section class="py-16 md:py-24 bg-white">
         <div class="max-w-4xl mx-auto px-4">
-            <div class="bg-gradient-to-br from-pink-50 to-white border border-pink-100 rounded-3xl p-8 md:p-12 shadow-lg relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full -mr-10 -mt-10"></div>
-                <h2 class="text-3xl font-bold mb-8 text-center relative z-10">講座概要</h2>
+            <div class="bg-gradient-to-br from-pink-50 to-white border border-pink-100 rounded-3xl p-6 md:p-12 shadow-lg relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-24 h-24 md:w-32 md:h-32 bg-primary/10 rounded-full -mr-8 -mt-8 md:-mr-10 md:-mt-10"></div>
+                <h2 class="text-2xl md:text-3xl font-bold mb-8 md:mb-10 text-center relative z-10">講座概要</h2>
                 
-                <div class="space-y-6 relative z-10">
-                    <div class="flex items-start gap-4 border-b border-gray-100 pb-4">
-                        <div class="bg-primary text-white font-bold py-1 px-4 rounded-full text-sm shrink-0">期間</div>
-                        <p class="pt-1 text-lg"><strong class="text-pink-500">最短4ヶ月！短期集中で取得できます！</strong><br><span class="text-sm text-textLight">現場ですぐに活かせるよう、熱量を保ったまま一気にスキルを身につけます。</span></p>
+                <div class="space-y-4 md:space-y-6 relative z-10">
+                    <div class="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-4 border-b border-gray-100 pb-4">
+                        <div class="bg-primary text-white font-bold py-1 px-4 rounded-full text-xs shrink-0 self-start md:self-auto">期間</div>
+                        <p class="text-sm md:text-base leading-relaxed"><strong class="text-pink-500 text-base md:text-lg">最短4ヶ月！短期集中で取得できます！</strong><br><span class="text-xs md:text-sm text-textLight">現場ですぐに活かせるよう、熱量を保ったまま一気にスキルを身につけます。</span></p>
                     </div>
-                    <div class="flex items-start gap-4 border-b border-gray-100 pb-4">
-                        <div class="bg-primary text-white font-bold py-1 px-4 rounded-full text-sm shrink-0">形式</div>
-                        <p class="pt-1"><strong>オンライン講義 ＋ コースによりリアル会場（対面）</strong><br><span class="text-sm text-textLight">全国どこからでも参加可能。リアル会場で直接熱量を体感することもできます。</span></p>
+                    <div class="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-4 border-b border-gray-100 pb-4">
+                        <div class="bg-primary text-white font-bold py-1 px-4 rounded-full text-xs shrink-0 self-start md:self-auto">形式</div>
+                        <p class="text-sm md:text-base leading-relaxed"><strong>オンライン講義 ＋ コースによりリアル会場（対面）</strong><br><span class="text-xs md:text-sm text-textLight">全国どこからでも参加可能。リアル会場で直接熱量を体感することもできます。</span></p>
                     </div>
-                    <div class="flex items-start gap-4 border-b border-gray-100 pb-4">
-                        <div class="bg-primary text-white font-bold py-1 px-4 rounded-full text-sm shrink-0">規模</div>
-                        <p class="pt-1"><strong>超少人数制（定員5名程度）</strong><br><span class="text-sm text-textLight">一人ひとりの悩みに寄り添うため、アットホームな雰囲気を大切にしています。</span></p>
+                    <div class="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-4 border-b border-gray-100 pb-4">
+                        <div class="bg-primary text-white font-bold py-1 px-4 rounded-full text-xs shrink-0 self-start md:self-auto">規模</div>
+                        <p class="text-sm md:text-base leading-relaxed"><strong>超少人数制（定員5名程度）</strong><br><span class="text-xs md:text-sm text-textLight">一人ひとりの悩みに寄り添うため、アットホームな雰囲気を大切にしています。</span></p>
                     </div>
-                    <div class="flex items-start gap-4 pb-4">
-                        <div class="bg-primary text-white font-bold py-1 px-4 rounded-full text-sm shrink-0">対象</div>
-                        <p class="pt-1">児童発達支援・放デイの指導員・教育者の方、専門性を高めたい方、将来独立を考えている意欲的な方大歓迎！</p>
+                    <div class="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-4 pb-2">
+                        <div class="bg-primary text-white font-bold py-1 px-4 rounded-full text-xs shrink-0 self-start md:self-auto">対象</div>
+                        <p class="text-sm md:text-base leading-relaxed">児童発達支援・放デイの指導員・教育者の方、専門性を高めたい方、将来独立を考えている意欲的な方大歓迎！</p>
                     </div>
                 </div>
             </div>
@@ -243,39 +270,51 @@
     </section>
 
     <!-- Curriculum Section (Roadmap) -->
-    <section class="py-20 bg-pink-50">
+    <section class="py-16 md:py-24 bg-pink-50">
         <div class="max-w-4xl mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4">自信がつく！<br class="md:hidden"><span class="text-primary">4ヶ月間のロードマップ</span></h2>
-                <div class="w-24 h-1 bg-secondary mx-auto rounded-full"></div>
+            <div class="text-center mb-10 md:mb-14">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4 leading-relaxed">自信がつく！<br class="sm:hidden"><span class="text-primary">4ヶ月間のロードマップ</span></h2>
+                <div class="w-16 md:w-24 h-1 bg-secondary mx-auto rounded-full"></div>
             </div>
-            <div class="space-y-8">
-                <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-primary flex flex-col md:flex-row gap-4">
-                    <div class="md:w-32 font-bold text-pink-400 text-xl shrink-0">Month 1</div>
+            <div class="space-y-4 md:space-y-6">
+                <!-- Month 1 -->
+                <div class="bg-white p-5 md:p-6 rounded-2xl shadow-sm border-l-4 border-primary flex flex-col sm:flex-row gap-3 md:gap-6">
+                    <div class="sm:w-24 md:w-32 font-bold text-pink-400 text-lg md:text-xl shrink-0 flex items-center sm:items-start gap-2">
+                        <i class="fa-solid fa-flag text-pink-200 sm:hidden"></i> Month 1
+                    </div>
                     <div>
-                        <h4 class="text-lg font-bold mb-2">子どもの“つまずき”を理解する</h4>
-                        <p class="text-sm text-textLight leading-relaxed">感覚・姿勢・ボディイメージなど、運動療育の土台を学びます。<br>「なぜできないのか？」を整理し、“なんとなく支援”から卒業します。</p>
+                        <h4 class="text-base md:text-lg font-bold mb-2">子どもの“つまずき”を理解する</h4>
+                        <p class="text-xs md:text-sm text-textLight leading-relaxed">感覚・姿勢・ボディイメージなど、運動療育の土台を学びます。<br class="hidden md:block">「なぜできないのか？」を整理し、“なんとなく支援”から卒業します。</p>
                     </div>
                 </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-primary flex flex-col md:flex-row gap-4">
-                    <div class="md:w-32 font-bold text-pink-400 text-xl shrink-0">Month 2</div>
+                <!-- Month 2 -->
+                <div class="bg-white p-5 md:p-6 rounded-2xl shadow-sm border-l-4 border-primary flex flex-col sm:flex-row gap-3 md:gap-6">
+                    <div class="sm:w-24 md:w-32 font-bold text-pink-400 text-lg md:text-xl shrink-0 flex items-center sm:items-start gap-2">
+                        <i class="fa-solid fa-person-running text-pink-200 sm:hidden"></i> Month 2
+                    </div>
                     <div>
-                        <h4 class="text-lg font-bold mb-2">支援を組み立てる</h4>
-                        <p class="text-sm text-textLight leading-relaxed">活動設定・難易度調整・声かけなど、現場で使える支援方法を学びます。<br>子どもに合わせた“意図のある支援”を実践できるようになります。</p>
+                        <h4 class="text-base md:text-lg font-bold mb-2">支援を組み立てる</h4>
+                        <p class="text-xs md:text-sm text-textLight leading-relaxed">活動設定・難易度調整・声かけなど、現場で使える支援方法を学びます。<br class="hidden md:block">子どもに合わせた“意図のある支援”を実践できるようになります。</p>
                     </div>
                 </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-primary flex flex-col md:flex-row gap-4">
-                    <div class="md:w-32 font-bold text-pink-400 text-xl shrink-0">Month 3</div>
+                <!-- Month 3 -->
+                <div class="bg-white p-5 md:p-6 rounded-2xl shadow-sm border-l-4 border-primary flex flex-col sm:flex-row gap-3 md:gap-6">
+                    <div class="sm:w-24 md:w-32 font-bold text-pink-400 text-lg md:text-xl shrink-0 flex items-center sm:items-start gap-2">
+                        <i class="fa-solid fa-chart-line text-pink-200 sm:hidden"></i> Month 3
+                    </div>
                     <div>
-                        <h4 class="text-lg font-bold mb-2">実践力を高める</h4>
-                        <p class="text-sm text-textLight leading-relaxed">ケース相談やフィードバックを通して、支援の精度を高めます。<br>現場での迷いを減らし、“対応できる力”を身につけます。</p>
+                        <h4 class="text-base md:text-lg font-bold mb-2">実践力を高める</h4>
+                        <p class="text-xs md:text-sm text-textLight leading-relaxed">ケース相談やフィードバックを通して、支援の精度を高めます。<br class="hidden md:block">現場での迷いを減らし、“対応できる力”を身につけます。</p>
                     </div>
                 </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-primary flex flex-col md:flex-row gap-4">
-                    <div class="md:w-32 font-bold text-pink-400 text-xl shrink-0">Month 4</div>
+                <!-- Month 4 -->
+                <div class="bg-white p-5 md:p-6 rounded-2xl shadow-sm border-l-4 border-primary flex flex-col sm:flex-row gap-3 md:gap-6">
+                    <div class="sm:w-24 md:w-32 font-bold text-pink-400 text-lg md:text-xl shrink-0 flex items-center sm:items-start gap-2">
+                        <i class="fa-solid fa-crown text-pink-200 sm:hidden"></i> Month 4
+                    </div>
                     <div>
-                        <h4 class="text-lg font-bold mb-2">支援を言語化する</h4>
-                        <p class="text-sm text-textLight leading-relaxed">保護者説明・職員間共有・振り返りを通して、自分の支援軸を整理します。<br>「なぜその支援をするのか」を説明できる状態を目指します。</p>
+                        <h4 class="text-base md:text-lg font-bold mb-2">支援を言語化する</h4>
+                        <p class="text-xs md:text-sm text-textLight leading-relaxed">保護者説明・職員間共有・振り返りを通して、自分の支援軸を整理します。<br class="hidden md:block">「なぜその支援をするのか」を説明できる状態を目指します。</p>
                     </div>
                 </div>
             </div>
@@ -283,34 +322,67 @@
     </section>
 
     <!-- Courses / Pricing Table -->
-    <section class="py-20 bg-white">
+    <section class="py-16 md:py-24 bg-white">
         <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4">目的に合わせて選べる<br class="md:hidden"><span class="text-primary">3つの養成コース</span></h2>
-                <div class="w-24 h-1 bg-secondary mx-auto rounded-full"></div>
+            <div class="text-center mb-10 md:mb-14">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4 leading-relaxed">目的に合わせて選べる<br class="sm:hidden"><span class="text-primary">3つの養成コース</span></h2>
+                <div class="w-16 md:w-24 h-1 bg-secondary mx-auto rounded-full"></div>
+                <p class="text-sm md:text-base mt-4 text-textLight">※スマホでは左右にスクロール、または縦に並んで表示されます</p>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Course 1 -->
-                <div class="bg-white border border-gray-100 rounded-3xl p-8 shadow-md hover:shadow-xl transition duration-300 flex flex-col">
-                    <h3 class="text-xl font-bold mb-4 text-center">スキルアップコース</h3>
-                    <div class="text-center mb-6">
-                        <span class="text-3xl font-bold text-textMain">98,000</span><span class="text-lg">円</span>
-                        <div class="text-sm text-gray-400">/ 4ヶ月</div>
+            <div class="grid md:grid-cols-3 gap-8 md:gap-6 lg:gap-8">
+                
+                <!-- Course 2 (Recommended) - スマホで一番上に来るように order-first を設定 -->
+                <div class="order-first md:order-none bg-gradient-to-b from-pink-50 to-white border-2 border-primary rounded-3xl p-6 md:p-8 shadow-[0_10px_25px_rgba(255,182,193,0.3)] transform md:-translate-y-4 relative flex flex-col z-10">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-white font-bold px-6 py-1.5 rounded-full text-xs md:text-sm whitespace-nowrap shadow-md">
+                        一番人気！定員5名・0期生特別枠
                     </div>
-                    <p class="text-sm text-textLight mb-6 text-center">自分のペースで、運動療育の基礎を体系的に学べるコースです。</p>
+                    <h3 class="text-lg md:text-xl font-bold mb-3 text-center text-primary mt-3 md:mt-2">認定アドバイザーコース</h3>
+                    <div class="text-center mb-5 md:mb-6">
+                        <span class="text-4xl font-bold text-pink-500">350,000</span><span class="text-base md:text-lg text-pink-500">円</span>
+                        <div class="text-xs md:text-sm text-gray-400">/ 4ヶ月</div>
+                    </div>
+                    <p class="text-xs md:text-sm text-textLight mb-6 text-center">現場の悩みに伴走する、少人数サポート型コースです。</p>
                     
-                    <div class="flex-1">
-                        <h4 class="font-bold text-sm text-pink-500 mb-2 border-b border-pink-100 pb-1">内容</h4>
-                        <ul class="space-y-2 text-sm text-textMain mb-6">
+                    <div class="flex-1 bg-white/60 p-4 rounded-2xl">
+                        <h4 class="font-bold text-xs md:text-sm text-primary mb-2 border-b border-pink-200 pb-1">内容</h4>
+                        <ul class="space-y-2 text-xs md:text-sm text-textMain mb-6 font-bold">
+                            <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-2 shrink-0"></i>スキルアップコース内容すべて</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-2 shrink-0"></i>ワークシート・資料配布・解説サポート</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-2 shrink-0"></i>ケース相談・活動フィードバック</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-2 shrink-0"></i>少人数Zoom相談会</li>
+                        </ul>
+                        
+                        <h4 class="font-bold text-xs md:text-sm text-primary mb-2 border-b border-pink-200 pb-1">こんな方へ</h4>
+                        <ul class="space-y-2 text-xs md:text-sm text-textMain font-bold">
+                            <li class="flex items-start"><i class="fa-regular fa-face-smile text-pink-400 mt-1 mr-2 shrink-0"></i>現場で判断に迷うことが多い</li>
+                            <li class="flex items-start"><i class="fa-regular fa-face-smile text-pink-400 mt-1 mr-2 shrink-0"></i>相談できる相手がほしい</li>
+                            <li class="flex items-start"><i class="fa-regular fa-face-smile text-pink-400 mt-1 mr-2 shrink-0"></i>支援をより実践的に深めたい</li>
+                            <li class="flex items-start"><i class="fa-regular fa-face-smile text-pink-400 mt-1 mr-2 shrink-0"></i>保護者対応に自信をつけたい</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Course 1 -->
+                <div class="bg-white border border-gray-100 rounded-3xl p-6 md:p-8 shadow-md hover:shadow-xl transition duration-300 flex flex-col mt-4 md:mt-0">
+                    <h3 class="text-lg md:text-xl font-bold mb-3 text-center">スキルアップコース</h3>
+                    <div class="text-center mb-5 md:mb-6">
+                        <span class="text-3xl font-bold text-textMain">98,000</span><span class="text-base md:text-lg">円</span>
+                        <div class="text-xs md:text-sm text-gray-400">/ 4ヶ月</div>
+                    </div>
+                    <p class="text-xs md:text-sm text-textLight mb-6 text-center">自分のペースで、運動療育の基礎を体系的に学べるコースです。</p>
+                    
+                    <div class="flex-1 p-2 md:p-0">
+                        <h4 class="font-bold text-xs md:text-sm text-pink-500 mb-2 border-b border-pink-100 pb-1">内容</h4>
+                        <ul class="space-y-2 text-xs md:text-sm text-textMain mb-6">
                             <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mt-1 mr-2 shrink-0"></i>オンライン講義（全12回）</li>
                             <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mt-1 mr-2 shrink-0"></i>オンライン講義アーカイブ見放題</li>
                             <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mt-1 mr-2 shrink-0"></i>プログラム、評価解説</li>
                             <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mt-1 mr-2 shrink-0"></i>個別LINE相談</li>
                         </ul>
                         
-                        <h4 class="font-bold text-sm text-pink-500 mb-2 border-b border-pink-100 pb-1">こんな方へ</h4>
-                        <ul class="space-y-2 text-sm text-textMain">
+                        <h4 class="font-bold text-xs md:text-sm text-pink-500 mb-2 border-b border-pink-100 pb-1">こんな方へ</h4>
+                        <ul class="space-y-2 text-xs md:text-sm text-textMain">
                             <li class="flex items-start"><i class="fa-regular fa-face-smile text-yellow-500 mt-1 mr-2 shrink-0"></i>運動療育を基礎から学びたい</li>
                             <li class="flex items-start"><i class="fa-regular fa-face-smile text-yellow-500 mt-1 mr-2 shrink-0"></i>活動がワンパターンになっている</li>
                             <li class="flex items-start"><i class="fa-regular fa-face-smile text-yellow-500 mt-1 mr-2 shrink-0"></i>子どもの“つまずき”を理解したい</li>
@@ -319,49 +391,18 @@
                     </div>
                 </div>
                 
-                <!-- Course 2 (Recommended) -->
-                <div class="bg-gradient-to-b from-pink-50 to-white border-2 border-primary rounded-3xl p-8 shadow-xl transform md:-translate-y-4 relative flex flex-col">
-                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-white font-bold px-6 py-1 rounded-full text-sm whitespace-nowrap shadow-md">
-                        定員5名・0期生特別枠
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 text-center text-primary mt-2">認定アドバイザーコース</h3>
-                    <div class="text-center mb-6">
-                        <span class="text-4xl font-bold text-pink-500">350,000</span><span class="text-lg text-pink-500">円</span>
-                        <div class="text-sm text-gray-400">/ 4ヶ月</div>
-                    </div>
-                    <p class="text-sm text-textLight mb-6 text-center">現場の悩みに伴走する、少人数サポート型コースです。</p>
-                    
-                    <div class="flex-1">
-                        <h4 class="font-bold text-sm text-primary mb-2 border-b border-pink-200 pb-1">内容</h4>
-                        <ul class="space-y-2 text-sm text-textMain mb-6 font-bold">
-                            <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-2 shrink-0"></i>スキルアップコース内容すべて</li>
-                            <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-2 shrink-0"></i>ワークシート・資料配布・解説サポート</li>
-                            <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-2 shrink-0"></i>ケース相談・活動フィードバック</li>
-                            <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-2 shrink-0"></i>少人数Zoom相談会</li>
-                        </ul>
-                        
-                        <h4 class="font-bold text-sm text-primary mb-2 border-b border-pink-200 pb-1">こんな方へ</h4>
-                        <ul class="space-y-2 text-sm text-textMain font-bold">
-                            <li class="flex items-start"><i class="fa-regular fa-face-smile text-pink-400 mt-1 mr-2 shrink-0"></i>現場で判断に迷うことが多い</li>
-                            <li class="flex items-start"><i class="fa-regular fa-face-smile text-pink-400 mt-1 mr-2 shrink-0"></i>相談できる相手がほしい</li>
-                            <li class="flex items-start"><i class="fa-regular fa-face-smile text-pink-400 mt-1 mr-2 shrink-0"></i>支援をより実践的に深めたい</li>
-                            <li class="flex items-start"><i class="fa-regular fa-face-smile text-pink-400 mt-1 mr-2 shrink-0"></i>保護者対応に自信をつけたい</li>
-                        </ul>
-                    </div>
-                </div>
-                
                 <!-- Course 3 -->
-                <div class="bg-white border border-gray-100 rounded-3xl p-8 shadow-md hover:shadow-xl transition duration-300 flex flex-col">
-                    <h3 class="text-xl font-bold mb-4 text-center">現場アップデートコース</h3>
-                    <div class="text-center mb-6">
-                        <span class="text-3xl font-bold text-textMain">700,000</span><span class="text-lg">円</span>
-                        <div class="text-sm text-gray-400">/ 4ヶ月</div>
+                <div class="bg-white border border-gray-100 rounded-3xl p-6 md:p-8 shadow-md hover:shadow-xl transition duration-300 flex flex-col mt-4 md:mt-0">
+                    <h3 class="text-lg md:text-xl font-bold mb-3 text-center">現場アップデートコース</h3>
+                    <div class="text-center mb-5 md:mb-6">
+                        <span class="text-3xl font-bold text-textMain">700,000</span><span class="text-base md:text-lg">円</span>
+                        <div class="text-xs md:text-sm text-gray-400">/ 4ヶ月</div>
                     </div>
-                    <p class="text-sm text-textLight mb-6 text-center">事業所全体の支援力を高める、現場導入型コースです。</p>
+                    <p class="text-xs md:text-sm text-textLight mb-6 text-center">事業所全体の支援力を高める、現場導入型コースです。</p>
                     
-                    <div class="flex-1">
-                        <h4 class="font-bold text-sm text-pink-500 mb-2 border-b border-pink-100 pb-1">内容</h4>
-                        <ul class="space-y-2 text-sm text-textMain mb-6">
+                    <div class="flex-1 p-2 md:p-0">
+                        <h4 class="font-bold text-xs md:text-sm text-pink-500 mb-2 border-b border-pink-100 pb-1">内容</h4>
+                        <ul class="space-y-2 text-xs md:text-sm text-textMain mb-6">
                             <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mt-1 mr-2 shrink-0"></i>スキルアップ、アドバイザーの内容</li>
                             <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mt-1 mr-2 shrink-0"></i>現場訪問サポート</li>
                             <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mt-1 mr-2 shrink-0"></i>職員研修</li>
@@ -370,8 +411,8 @@
                             <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mt-1 mr-2 shrink-0"></i>スタッフ育成サポート</li>
                         </ul>
                         
-                        <h4 class="font-bold text-sm text-pink-500 mb-2 border-b border-pink-100 pb-1">こんな方へ</h4>
-                        <ul class="space-y-2 text-sm text-textMain">
+                        <h4 class="font-bold text-xs md:text-sm text-pink-500 mb-2 border-b border-pink-100 pb-1">こんな方へ</h4>
+                        <ul class="space-y-2 text-xs md:text-sm text-textMain">
                             <li class="flex items-start"><i class="fa-regular fa-face-smile text-yellow-500 mt-1 mr-2 shrink-0"></i>支援の質を統一したい</li>
                             <li class="flex items-start"><i class="fa-regular fa-face-smile text-yellow-500 mt-1 mr-2 shrink-0"></i>新人育成に悩んでいる</li>
                             <li class="flex items-start"><i class="fa-regular fa-face-smile text-yellow-500 mt-1 mr-2 shrink-0"></i>運動療育を強みにしたい</li>
@@ -382,37 +423,37 @@
                 </div>
             </div>
             
-            <div class="mt-12 text-center">
-                <a href="#cta" class="inline-block bg-primary hover:bg-pink-400 text-white font-bold py-3 px-8 rounded-full shadow-md transition duration-300">
-                    コースの詳細を相談する <i class="fa-solid fa-arrow-down ml-2"></i>
+            <div class="mt-12 md:mt-16 text-center">
+                <a href="#cta" class="inline-flex items-center justify-center w-full max-w-sm mx-auto bg-primary hover:bg-pink-400 text-white font-bold py-4 px-8 rounded-full shadow-md transition duration-300">
+                    コースの詳細を相談する <i class="fa-solid fa-arrow-down ml-2 animate-bounce"></i>
                 </a>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section id="cta" class="py-24 bg-gradient-to-r from-primary/20 to-secondary/40 relative">
+    <section id="cta" class="py-16 md:py-24 bg-gradient-to-r from-primary/20 to-secondary/40 relative">
         <div class="max-w-3xl mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">まずは、無料個別相談へ<br class="md:hidden">お越しください☕️</h2>
-            <p class="text-lg mb-8 text-textLight">
-                「私の今の現場でも活かせる？」「どんな仲間がいるの？」<br>
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-6 leading-relaxed">まずは、無料個別相談へ<br class="sm:hidden">お越しください☕️</h2>
+            <p class="text-sm md:text-lg mb-8 md:mb-10 text-textLight px-2 md:px-0">
+                「私の今の現場でも活かせる？」「どんな仲間がいるの？」<br class="hidden md:block">
                 些細なことでも構いません。アットホームな雰囲気で、あなたのキャリアの悩みをお伺いします。
             </p>
             
-            <div class="bg-white p-8 rounded-3xl shadow-xl inline-block w-full max-w-lg mb-8 relative border-2 border-primary">
-                <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-yellow-900 font-bold px-6 py-2 rounded-full shadow-md animate-bounce whitespace-nowrap">
-                    <i class="fa-solid fa-gift"></i> 特別プレゼント！
+            <div class="bg-white p-6 md:p-8 rounded-3xl shadow-xl inline-block w-full max-w-lg mb-8 md:mb-10 relative border-2 border-primary">
+                <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-yellow-900 font-bold px-4 py-1.5 md:px-6 md:py-2 rounded-full shadow-md animate-bounce whitespace-nowrap text-xs md:text-sm">
+                    <i class="fa-solid fa-gift"></i> 今なら特別プレゼント！
                 </div>
-                <div class="flex flex-col sm:flex-row items-center gap-6 mt-4">
-                    <div class="w-full sm:w-1/3">
+                <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 mt-4 md:mt-6">
+                    <div class="w-1/2 sm:w-1/3">
                         <!-- Book Cover Image -->
-                        <div class="h-48 w-full rounded-lg shadow-inner overflow-hidden relative">
+                        <div class="h-32 sm:h-40 w-full rounded-lg overflow-hidden relative drop-shadow-md">
                             <img src="images/book_orange.jpeg" alt="体幹を育てる運動あそび100" class="w-full h-full object-contain bg-white">
                         </div>
                     </div>
                     <div class="w-full sm:w-2/3 text-center sm:text-left">
-                        <p class="font-bold text-lg mb-2 text-pink-500">個別相談にお申し込みの方全員に！</p>
-                        <p class="text-sm text-textLight leading-relaxed">
+                        <p class="font-bold text-base md:text-lg mb-2 text-pink-500">個別相談にお申し込みの方全員に！</p>
+                        <p class="text-xs md:text-sm text-textLight leading-relaxed">
                             明治図書より出版された谷河の著書<br>
                             <strong>『体幹を育てる運動あそび100』</strong><br>
                             を無料でプレゼントいたします！現場ですぐに使えるプログラムが満載です。
@@ -421,16 +462,28 @@
                 </div>
             </div>
 
-            <a href="https://line.me/R/ti/p/@566cwlrw" target="_blank" rel="noopener noreferrer" class="block w-full max-w-md mx-auto bg-[#06C755] hover:bg-[#05b34c] text-white font-bold text-xl py-5 px-8 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition duration-300">
-                <i class="fa-brands fa-line text-2xl mr-2 align-middle"></i> LINEで無料相談を予約する
-            </a>
-            <p class="text-xs text-gray-500 mt-4">ボタンをタップすると公式LINEが開きます。</p>
+            <div class="px-2 md:px-0">
+                <a href="https://line.me/R/ti/p/@566cwlrw" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-full max-w-md mx-auto bg-[#06C755] hover:bg-[#05b34c] text-white font-bold text-lg md:text-xl py-4 md:py-5 px-6 md:px-8 rounded-full shadow-[0_10px_20px_rgba(6,199,85,0.3)] hover:shadow-xl hover:-translate-y-1 transition duration-300 relative overflow-hidden group">
+                    <span class="absolute inset-0 w-full h-full bg-white/20 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></span>
+                    <i class="fa-brands fa-line text-2xl mr-2 align-middle group-hover:scale-110 transition-transform"></i> LINEで無料相談を予約する
+                </a>
+                <p class="text-[10px] md:text-xs text-gray-500 mt-4">ボタンをタップすると公式LINEが開きます。お気軽にご登録ください。</p>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-white py-8 text-center text-sm text-gray-400">
+    <footer class="bg-white py-6 md:py-8 text-center text-xs md:text-sm text-gray-400">
         <p>&copy; 2026 運動療育みらいサポーターズ All Rights Reserved.</p>
     </footer>
 
-</
+    <!-- 光るアニメーション用のCSS追加 -->
+    <style>
+        @keyframes shimmer {
+            100% {
+                transform: translateX(100%);
+            }
+        }
+    </style>
+</body>
+</html>
